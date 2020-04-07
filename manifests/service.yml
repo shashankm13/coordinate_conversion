@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "locman"
+    labels:
+        app: "locman"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 8888
+      targetPort: http
+      protocol: TCP
+      name: http
+    selector:
+        app: "locman"
